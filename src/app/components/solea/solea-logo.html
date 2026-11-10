@@ -1,0 +1,8 @@
+@if (tagline()) {
+  <span class="inline-flex flex-col items-start gap-1.5">
+    <img src="assets/solea-wordmark.svg" alt="Sōlea" [class]="classes()" />
+    <span [class]="taglineClasses()">Wellness</span>
+  </span>
+} @else {
+  <img src="assets/solea-wordmark.svg" alt="Sōlea" [class]="classes()" />
+}

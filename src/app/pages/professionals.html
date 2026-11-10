@@ -1,0 +1,13 @@
+<sol-public-layout>
+  <sol-page-hero
+    eyebrow="For Professionals"
+    title="Spend more time on care, less on scheduling"
+    sub="Sōlea gives women's health professionals in Rwanda a simple workspace for bookings, availability and patients."
+    [actions]="true"
+  >
+    <a solButton variant="ink" size="xl" class="rounded-full" routerLink="/auth" [queryParams]="{ role: 'provider' }">
+      Explore the provider workspace
+    </a>
+  </sol-page-hero>
+  <sol-feature-grid [items]="items" />
+</sol-public-layout>

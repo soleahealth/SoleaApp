@@ -1,0 +1,145 @@
+<sol-public-layout>
+  <section class="mx-auto grid max-w-6xl items-center gap-10 px-5 pt-12 md:grid-cols-2 md:pt-20">
+    <div>
+      <p class="text-eyebrow uppercase text-muted-foreground">Women and girls · Rwanda, with a vision for Africa</p>
+      <h1 class="mt-3 font-display text-4xl font-extrabold leading-[1.1] md:text-6xl">Sōlea</h1>
+      <p class="mt-3 font-display text-2xl font-bold md:text-3xl">Your reproductive health, connected.</p>
+      <p class="mt-5 max-w-lg text-body text-muted-foreground md:text-lg">
+        Understand your body, explore your care options and connect with healthcare professionals, online or in
+        person. We're making sexual and reproductive healthcare more accessible, understandable and connected for
+        women and girls.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a solButton variant="ink" size="xl" class="rounded-full" routerLink="/auth" [queryParams]="{ role: 'woman' }">
+          Get started <lucide-angular [img]="ArrowRight" />
+        </a>
+        <a solButton variant="paper" size="xl" class="rounded-full" routerLink="/womens-health">How it helps</a>
+      </div>
+      <p class="mt-5 flex items-start gap-2 text-meta text-muted-foreground">
+        <lucide-angular [img]="ShieldCheck" class="mt-0.5 h-4 w-4 shrink-0" /> Private by design. You decide which
+        providers can see your shared health records.
+      </p>
+    </div>
+    <img
+      src="assets/home-hero.jpg"
+      alt="Young Rwandan woman at home looking at her phone"
+      width="1200"
+      height="1200"
+      class="aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-float md:aspect-square"
+    />
+  </section>
+
+  <section class="mt-16 border-y border-border/60 bg-card/60">
+    <div class="mx-auto max-w-6xl px-5 py-10 md:py-14">
+      <p class="text-eyebrow uppercase text-muted-foreground">Access to care</p>
+      <div class="mt-3 flex flex-wrap items-center justify-between gap-6">
+        <div class="max-w-2xl">
+          <h2 class="font-display text-3xl font-extrabold">Understand your care options</h2>
+          <p class="mt-3 text-body text-muted-foreground">
+            Explore insurance, Mutuelle de Santé and what to confirm with your facility before an online or in-person
+            visit.
+          </p>
+        </div>
+        <a solButton variant="ink" class="rounded-full" routerLink="/access-to-care">
+          Explore access to care <lucide-angular [img]="ArrowRight" class="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-5">
+    <h2 class="font-display text-3xl font-extrabold">Support for every life stage</h2>
+    <p class="mt-2 text-body text-muted-foreground">
+      From understanding your cycle to pregnancy, postpartum and midlife, feel informed and supported through your
+      health journey.
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      @for (j of journeys; track j.id) {
+        <div class="rounded-[1.75rem] glass p-6 shadow-soft">
+          <span class="inline-block rounded-full px-3 py-1 text-meta font-semibold" [class]="j.tone">{{ j.label }}</span>
+          <p class="mt-3 text-meta text-muted-foreground">{{ j.blurb }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-5">
+    <h2 class="font-display text-3xl font-extrabold">How it works</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      @for (s of steps; track s.title; let i = $index) {
+        <div class="rounded-[1.75rem] bg-card p-6 shadow-soft">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground">
+              <lucide-angular [img]="s.icon" class="h-5 w-5" />
+            </span>
+            <span class="text-meta text-muted-foreground">Step {{ i + 1 }}</span>
+          </div>
+          <h3 class="mt-4 font-display text-subtitle">{{ s.title }}</h3>
+          <p class="mt-1 text-meta text-muted-foreground">{{ s.body }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2">
+    <img
+      src="assets/home-care.jpg"
+      alt="Midwife caring for a pregnant woman in a clinic"
+      width="1200"
+      height="900"
+      loading="lazy"
+      class="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-float"
+    />
+    <div>
+      <h2 class="font-display text-3xl font-extrabold">
+        Online when it suits you, in person when you need it
+      </h2>
+      <ul class="mt-6 space-y-4">
+        <li class="flex gap-3">
+          <lucide-angular [img]="Video" class="mt-0.5 h-5 w-5 shrink-0 text-teal" />
+          <span class="text-body"><b>Video visits</b> for advice, follow-ups and questions from home.</span>
+        </li>
+        <li class="flex gap-3">
+          <lucide-angular [img]="Stethoscope" class="mt-0.5 h-5 w-5 shrink-0 text-coral" />
+          <span class="text-body"><b>Clinic visits</b> for exams, scans and antenatal care, at facilities across Rwanda.</span>
+        </li>
+        <li class="flex gap-3">
+          <lucide-angular [img]="Sparkles" class="mt-0.5 h-5 w-5 shrink-0 text-plum" />
+          <span class="text-body"><b>Ask Sōlea</b> for safe, plain-language answers and when to see a clinician.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 grid max-w-6xl gap-4 px-5 md:grid-cols-2">
+    <a routerLink="/professionals" class="group rounded-[2rem] bg-forest-gradient p-8 text-forest-foreground shadow-soft">
+      <lucide-angular [img]="Stethoscope" class="h-7 w-7" />
+      <h3 class="mt-4 font-display text-2xl font-extrabold">Are you a health professional?</h3>
+      <p class="mt-2 opacity-90">Help make care more connected through your expertise, consultations and patient follow-up.</p>
+      <span class="mt-5 inline-flex items-center gap-1.5 font-semibold">
+        Learn more <lucide-angular [img]="ArrowRight" class="h-4 w-4 transition group-hover:translate-x-1" />
+      </span>
+    </a>
+    <a routerLink="/partners" class="group rounded-[2rem] bg-periwinkle p-8 text-periwinkle-foreground shadow-soft">
+      <lucide-angular [img]="Building2" class="h-7 w-7" />
+      <h3 class="mt-4 font-display text-2xl font-extrabold">Clinics, hospitals and partners</h3>
+      <p class="mt-2 opacity-90">Work with us to bridge gaps in access through healthcare facilities, insurance, community programmes and meaningful partnerships.</p>
+      <span class="mt-5 inline-flex items-center gap-1.5 font-semibold">
+        Learn more <lucide-angular [img]="ArrowRight" class="h-4 w-4 transition group-hover:translate-x-1" />
+      </span>
+    </a>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-4xl px-5 text-center">
+    <lucide-angular [img]="ShieldCheck" class="mx-auto h-9 w-9 text-primary" />
+    <h2 class="mt-3 font-display text-3xl font-extrabold">Built on trust</h2>
+    <p class="mx-auto mt-3 max-w-2xl text-body text-muted-foreground">
+      Access, knowledge, trust and connected care guide everything we're building. Your health history is shared with
+      providers only with your permission. Example clinician profiles are clearly marked "Demo" while we build our
+      care network.
+    </p>
+    <a solButton variant="paper" class="mt-6 rounded-full" routerLink="/about">
+      Our mission and vision <lucide-angular [img]="ArrowRight" class="h-4 w-4" />
+    </a>
+  </section>
+</sol-public-layout>

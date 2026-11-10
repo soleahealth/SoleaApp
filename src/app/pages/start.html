@@ -1,0 +1,48 @@
+<main class="relative min-h-dvh overflow-hidden bg-mesh">
+  <div class="relative mx-auto flex min-h-dvh max-w-xl flex-col px-6 pb-10 pt-14 sm:justify-center sm:pt-10">
+    <div class="flex flex-col items-center text-center">
+      <sol-logo class="h-24" [tagline]="true" taglineClass="self-center" />
+    </div>
+
+    <div class="mt-12 sm:mt-14">
+      <h1 class="text-display">Welcome to Sōlea</h1>
+      <p class="mt-1 text-body text-muted-foreground">How would you like to access Sōlea?</p>
+    </div>
+
+    <ul class="mt-6 space-y-3">
+      @for (p of paths; track p.role) {
+        <li>
+          <a
+            routerLink="/auth"
+            [queryParams]="{ role: p.role }"
+            class="group relative flex min-h-[9.5rem] overflow-hidden rounded-[1.75rem] glass p-5 pr-32 shadow-soft transition hover:-translate-y-0.5 sm:pr-40"
+          >
+            <span class="absolute -bottom-10 -right-8 h-44 w-44 rounded-full" [class]="persona(p.role).tint"></span>
+            <img
+              [src]="persona(p.role).photo"
+              [alt]="persona(p.role).alt"
+              width="768"
+              height="960"
+              class="absolute bottom-0 right-1 h-[calc(100%-0.75rem)] w-auto object-contain object-bottom transition group-hover:scale-[1.03] sm:right-4"
+            />
+            <span class="relative flex flex-col">
+              <span class="grid h-9 w-9 place-items-center rounded-full" [class]="p.tone">
+                <lucide-angular [img]="p.icon" class="h-[18px] w-[18px]" [strokeWidth]="1.75" />
+              </span>
+              <span class="mt-3 block font-display text-subtitle">{{ p.title }}</span>
+              <span class="mt-0.5 block text-meta text-muted-foreground">{{ p.body }}</span>
+              <span class="mt-3 inline-flex items-center gap-1.5 text-meta font-semibold text-foreground">
+                Continue
+                <lucide-angular [img]="ArrowRight" class="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </span>
+            </span>
+          </a>
+        </li>
+      }
+    </ul>
+
+    <p class="mt-8 text-center text-meta text-muted-foreground">
+      Your health, your practice, your partnerships. One secure account.
+    </p>
+  </div>
+</main>

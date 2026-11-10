@@ -1,0 +1,13 @@
+<sol-public-layout>
+  <sol-page-hero
+    eyebrow="For Partners"
+    title="Grow women's health access together"
+    sub="For clinics, hospitals, programmes and insurers working to improve reproductive health in Rwanda."
+    [actions]="true"
+  >
+    <a solButton variant="ink" size="xl" class="rounded-full" routerLink="/auth" [queryParams]="{ role: 'institution' }">
+      Explore the partner workspace
+    </a>
+  </sol-page-hero>
+  <sol-feature-grid [items]="items" />
+</sol-public-layout>

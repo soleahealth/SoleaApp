@@ -1,0 +1,91 @@
+<sol-public-layout>
+  <sol-page-hero
+    eyebrow="Your options, made clearer"
+    title="Access to care"
+    sub="Understanding where to go, what your cover includes and what you may need to pay is part of feeling confident about your care."
+  />
+  <div class="mx-auto mb-12 mt-6 max-w-5xl px-5">
+    <img
+      src="assets/access-care-reception.jpg"
+      alt="A woman discussing her visit with a clinic receptionist"
+      width="1536"
+      height="1024"
+      class="aspect-[3/2] w-full rounded-[1.75rem] object-cover md:aspect-[2/1]"
+    />
+  </div>
+
+  <section class="mx-auto max-w-5xl px-5">
+    <p class="text-eyebrow uppercase text-muted-foreground">Health insurance in Rwanda</p>
+    <h2 class="mt-3 font-display text-3xl font-extrabold">Mutuelle de Santé & your insurance options</h2>
+    <p class="mt-3 max-w-3xl text-body text-muted-foreground">
+      Your cover can help you access care at participating facilities. Acceptance depends on your scheme, the
+      facility and the service you need. Confirm these details before your visit.
+    </p>
+    <div class="mt-8 grid gap-8 md:grid-cols-3">
+      <div class="border-t border-border pt-5">
+        <h3 class="font-display text-subtitle">Mutuelle de Santé</h3>
+        <p class="mt-3 text-body text-muted-foreground">Community-based health insurance. Ask the facility about eligibility, referral requirements and any contribution you need to pay.</p>
+      </div>
+      <div class="border-t border-border pt-5">
+        <h3 class="font-display text-subtitle">RSSB medical schemes & private insurance</h3>
+        <p class="mt-3 text-body text-muted-foreground">Check that the facility accepts your plan. Your insurer can confirm benefits, authorisation requirements and any fees not covered.</p>
+      </div>
+      <div class="border-t border-border pt-5">
+        <h3 class="font-display text-subtitle">Paying directly</h3>
+        <p class="mt-3 text-body text-muted-foreground">If you don't have cover, or your service isn't covered, ask for the total cost. Sōlea shows consultation fees in RWF; tests and other services may cost extra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-16 bg-card/60">
+    <div class="mx-auto grid max-w-5xl items-center gap-10 px-5 py-12 md:grid-cols-2">
+      <img
+        src="assets/home-care.jpg"
+        alt="A healthcare professional listening to a woman during an in-person consultation"
+        width="1024"
+        height="768"
+        loading="lazy"
+        class="aspect-[4/3] w-full rounded-[1.75rem] object-cover"
+      />
+      <div>
+        <h2 class="font-display text-3xl font-extrabold">Care that fits your needs</h2>
+        <div class="mt-6 flex gap-3">
+          <lucide-angular [img]="Video" class="mt-1 h-5 w-5 shrink-0 text-teal" />
+          <p class="text-body text-muted-foreground">
+            <strong class="text-foreground">Online consultations</strong> for conversations, advice and follow-up
+            from your phone. Confirm whether your plan covers virtual care.
+          </p>
+        </div>
+        <div class="mt-5 flex gap-3">
+          <lucide-angular [img]="Stethoscope" class="mt-1 h-5 w-5 shrink-0 text-coral" />
+          <p class="text-body text-muted-foreground">
+            <strong class="text-foreground">In-person appointments</strong> for examinations, screening and other
+            care at a facility. Ask about cover for any tests or procedures separately.
+          </p>
+        </div>
+        <p class="mt-5 text-meta text-muted-foreground">Available visit types depend on the professional and service you choose.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-5xl px-5">
+    <h2 class="font-display text-3xl font-extrabold">Before your appointment</h2>
+    <ul class="mt-6 grid gap-5 md:grid-cols-2">
+      @for (item of checklist; track item) {
+        <li class="flex items-start gap-3 text-body">
+          <lucide-angular [img]="Check" class="mt-0.5 h-5 w-5 shrink-0 text-primary" />{{ item }}
+        </li>
+      }
+    </ul>
+    <div class="mt-10 flex items-start gap-3 border-y border-border/60 py-6 text-meta text-muted-foreground">
+      <lucide-angular [img]="ShieldCheck" class="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+      <p>Sōlea does not currently process insurance claims or guarantee coverage. Mentioning a scheme does not imply a partnership; the facility and your insurer confirm acceptance and costs.</p>
+    </div>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-5">
+      <p class="font-display text-subtitle">Take the next step in your care journey.</p>
+      <a solButton variant="ink" size="xl" class="rounded-full" routerLink="/auth" [queryParams]="{ role: 'woman' }">
+        Get started <lucide-angular [img]="ArrowRight" />
+      </a>
+    </div>
+  </section>
+</sol-public-layout>

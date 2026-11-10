@@ -1,0 +1,14 @@
+<sol-public-layout>
+  <sol-page-hero
+    eyebrow="Women's Health"
+    title="Care that follows your journey"
+    sub="From your first period to menopause, Sōlea helps you understand your body and reach the right professional."
+    [actions]="true"
+  >
+    <a solButton variant="ink" size="xl" class="rounded-full" routerLink="/auth" [queryParams]="{ role: 'woman' }">
+      Explore my health
+    </a>
+  </sol-page-hero>
+  <sol-feature-grid [items]="journeyItems" />
+  <sol-feature-grid [items]="extraItems" />
+</sol-public-layout>
